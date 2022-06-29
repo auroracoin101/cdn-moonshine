@@ -1,35 +1,15 @@
 {
   "bitcoin": [
-    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
-    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
-    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
-    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
-    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
     {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
-    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
-    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
-    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
-    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
-    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
-    {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
-    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
-    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
-    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
-    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
-    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
-    {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
-    {"host": "btc.litepay.ch", "ssl": 50002, "tcp": 50001},
-    {"host": "electrumx.papabyte.com", "ssl": 50002, "tcp": 50001},
-    {"host": "bitcoin.lukechilds.co", "ssl": 50002, "tcp": 50001},
-    {"host": "electrum.blockstream.info", "ssl": 50002, "tcp": 50001},
-    {"host": "currentlane.8bit.ca", "ssl": 50002, "tcp": 50001},
-    {"host": "hodlers.beer", "ssl": 50002, "tcp": 50001},
+    {"host": "de.poiuty.com", "ssl": 50002, "tcp": 50001},
+    {"host": "e2.keff.org", "ssl": 50002, "tcp": 50001},
+    {"host": "f.keff.org", "ssl": 50002, "tcp": 50001},
+    {"host": "electrumx.dev", "ssl": 50002, "tcp": 50001},
   ],
   "litecoin": [
     {"host": "electrum-ltc.bysh.me", "ssl": 50002, "tcp": 50001},
     {"host": "electrum.ltc.xurious.com", "ssl": 50002, "tcp": 50001},
     {"host": "ltc.rentonisk.com", "ssl": 50002, "tcp": 50001},
-    // {"host": "ltc.litepay.ch", "ssl": 50002, "tcp": 50001}
   ],
   "canadaecoin": [
     {"host": "woolloomooloo.ecoincore.com", "ssl": 34333, "tcp": 34332 },
@@ -41,13 +21,13 @@
   ],
   "auroracoin": [
     {"host": "lenoir.ecoincore.com", "ssl": 12343, "tcp": 12342 },
-    {"host": "electrumx.aur.ewmcx.info", "ssl": 50002, "tcp": 12342 },
-    {"host": "failover.aur.ewmcx.biz", "ssl": 50002, "tcp": 12342 },
+    {"host": "electrumx.aur.ewmcx.info", "ssl": 50002, "tcp": 50001 },
+    {"host": "failover.aur.ewmcx.biz", "ssl": 50002, "tcp": 50001 },
   ],
   "egulden": [
     {"host": "holland.ecoincore.com", "ssl": 11017, "tcp": 11016 },
     {"host": "lenoir.ecoincore.com", "ssl": 11017, "tcp": 11016 },
-    {"host": "46.101.220.249", "ssl": 11017, "tcp": 11016 },
-    {"host": "136.144.210.129", "ssl": 50002, "tcp": 50001 },
+    {"host": "electrum2.egulden.org", "ssl": 50002, "tcp": 50001 },
+    {"host": "electrum3.egulden.org", "ssl": 50002, "tcp": 50001 },
   ]
 }
