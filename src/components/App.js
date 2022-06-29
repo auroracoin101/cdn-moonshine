@@ -373,6 +373,12 @@ export default class App extends Component {
 	};
 
 	updatePeerList = async () => {
+		// TODO:
+		// If we get peers from electrum, sometimes we come across one of these peers when they are down and
+		// our app crashes,. 
+		// HACK: Use only the hard coded servers for now, until we can sort out the crashing.
+		return;
+			
 		try {
 			const { selectedCrypto } = this.props.wallet;
 
