@@ -134,15 +134,15 @@ def getPassword(String currentUser, String keyChain) {
     stdout.toString().trim();
 }
 
-def releaseKeyAlias = "kisswallet";
-def releaseStoreFileName = "kisswallet.keystore";
+def releaseKeyAlias = "canadaecoin-key";
+def releaseStoreFileName = "canadaecoin.keystore";
 def hasReleaseStoreFile = file(releaseStoreFileName).exists();
 
 def releaseStoreFile = file('debug.keystore');
 if(hasReleaseStoreFile) {
     releaseStoreFile = file(releaseStoreFileName)
 }
-def pass = ""; //Add password here to override the default keychain password
+def pass = "NDI5YmY2N2Y1NDY4YTg2NGViYmFhZGEzNDI5YmY2N2Y1NDY4YTg2NGViYmFhZGEz"; //Add password here to override the default keychain password
 if(Os.isFamily(Os.FAMILY_MAC) && hasReleaseStoreFile && pass == "") {
     def currentUser = System.getProperty("user.name");
     def keyChainId = "moonshine_android_keystore";
@@ -169,8 +169,8 @@ android {
         applicationId "org.canadaecoin.moonshine"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 66
-        versionName "0.5.11"
+        versionCode 68
+        versionName "0.6.1"
         multiDexEnabled true
         missingDimensionStrategy 'react-native-camera', 'general'
     }
