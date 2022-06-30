@@ -101,14 +101,20 @@ const styles = StyleSheet.create({
 		paddingBottom: 20
 	},
 	icon: {
-		width: 80, height: 80, marginBottom: 20
+		width: 80, height: 80, margin: 20
 	},
 	header: {
 		...systemWeights.semibold,
 		textAlign: "center",
-		margin: 20,
-		marginTop: 30,
+		margin: 0,
+		marginTop: 8,
 		fontSize: normalize(24)
+	},
+	repoLink: {
+		fontSize: normalize(12),
+		...systemWeights.semibold,
+		textAlign: "center",
+		margin: 0,
 	},
 	text: {
 		...systemWeights.regular,
