@@ -10,7 +10,7 @@ import DDP from "react-ddp";
 import * as actions from "../actions"
 import { store } from "../../Root.js";
 
-const ECC_HOST = 'api.ecoincore.com'
+const ECC_HOST = 'explorer.canadaecoin.ca'
 const DEBUG = false;
 
 process.nextTick = setImmediate; //react-native polyfill
