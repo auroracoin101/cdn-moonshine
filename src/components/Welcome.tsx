@@ -21,11 +21,9 @@ export function normalize(size) {
   }
 }
 
-const updates = [
-	"Cloned github://coreyphillips/moonshine",
-	"Added support for Canada eCoin.",
-	"Themed with Canada eCoin colours.",
-];
+const {
+	version
+} = require("../../package.json");
 
 const _Welcome = ({ onClose = () => null, children = <View /> } = {}) => {
 
@@ -33,18 +31,35 @@ const _Welcome = ({ onClose = () => null, children = <View /> } = {}) => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.header}>Canada eCoin Mobile</Text>
+			<Text onPress={() => Linking.openURL("https://github.com/Canada-eCoin/cdn-moonshine").catch((e) => console.log(e))} >
+				<Text style={styles.repoLink}>github.com/Canada-eCoin/cdn-moonshine</Text>
+			</Text>
+			<Text style={styles.repoLink}>v{version}</Text>
+
 			<Image
 				style={styles.icon}
 				source={require("../assets/logo/main_icon.png")}
 			/>
 			<View style={{ width: "100%" }}>
+			
 				{children}
 
-				<Text style={[styles.subHeader, { textAlign: "center" }]}>Thank you for trying the Canada eCoin experience.</Text>
+				<Text style={styles.subHeader}>Beta Software</Text>
+				<Text style={styles.text}>Thank you for trying the Canada eCoin experience.  This software is currently in the beta testing phase.  Please refrain from storing any value in this software while not testing it.  Your best long-term storage option is to use a paper wallet.  This software is meant to hold folding money, not life savings.</Text>
 
-				<Text style={styles.subHeader}>BETA TESTERS ONLY</Text>
-				<Text style={styles.text}>This software is currently in the beta testing phase.  Please refrain from storing any value in this software while not testing it.  </Text>
 				<Text style={styles.subHeader}>Will you join us?</Text>
+				<Text style={styles.text}>If you are technically savvy, we would love to have you join our community.  The Canada eCoin project is a volunteer community project from 2014 that has had zero premine.  Truely owned by those who use/hold it.</Text>
+
+
+				<Text style={styles.text}>Consider joining one of the many Canada eCoin channels and enguaging with the community.  Software like this is only useful when there is a healthy community that participates.</Text>
+
+				<Text style={styles.text}>Visit our website:</Text>
+				<Text
+					onPress={() => Linking.openURL("https://canadaecoin.ca").catch((e) => console.log(e))}
+					style={[styles.text, { marginTop: 5 }]}
+				>
+					<Text style={styles.semiBoldText}>https://canadaecoin.ca</Text>
+				</Text>
 
 				<Text style={styles.text}>Find us in our community social channels:</Text>
 				<Text
@@ -66,10 +81,10 @@ const _Welcome = ({ onClose = () => null, children = <View /> } = {}) => {
 					<Text style={styles.semiBoldText}>Keybase: </Text>keybase.io/team/CanadaeCoin
 				</Text>
 				<Text
-					onPress={() => Linking.openURL("mailto:support@canadaecoin.foundation?subject=Requesting some help RE: the moonshine wallet.").catch((e) => console.log(e))}
+					onPress={() => Linking.openURL("mailto:support@canadaecoin.ca?subject=Requesting some help RE: the moonshine wallet.").catch((e) => console.log(e))}
 					style={[styles.text, { marginTop: 5 }]}
 				>
-					<Text style={styles.semiBoldText}>Email: </Text>support@canadaecoin.foundation
+					<Text style={styles.semiBoldText}>Email: </Text>support@canadaecoin.ca
 				</Text>
 			</View>
 			<Button text="continue" style={{marginVertical: 30}} onPress={onClose} />

@@ -825,15 +825,23 @@ class Settings extends PureComponent {
 
 	requestHelp = () => {
 		try {
-			Linking.openURL("mailto:support@ecoincore.com?subject=Requesting Some Help").catch((e) => console.log(e));
+			Linking.openURL("mailto:support@canadaecoin.ca?subject=Requesting Some Help (cdn-moonshine)").catch((e) => console.log(e));
 		} catch {}
 	};
 
 	visitWebsite = () => {
 		try {
-			Linking.openURL("https://moonshinewallet.com").catch((e) => console.log(e));
+			Linking.openURL("https://canadaecoin.ca").catch((e) => console.log(e));
 		} catch {}
 	};
+
+
+	visitMoonshineDotcom = () => {
+		try {
+			Linking.openURL("https://moonshine.com").catch((e) => console.log(e));
+		} catch {}
+	};
+
 
 	donate = async () => {
 		try {
@@ -881,13 +889,13 @@ class Settings extends PureComponent {
 		const coinTypePath = defaultWalletShape.coinTypePath[selectedCrypto];
 		const cryptoLabel = capitalize(selectedCrypto);
 
-		let keyDerivationPath = "84";
+		let keyDerivationPath = "84";  // TODO: Hardcoded wallet config should not exist.
 		try {keyDerivationPath = this.props.wallet.wallets[selectedWallet].keyDerivationPath[selectedCrypto];} catch (e) {}
 
 		let coinDataLabel = "?";
 		try {coinDataLabel = getCoinData({ selectedCrypto, cryptoUnit: "BTC" });} catch (e) {}
 
-		let addressType = "bech32";
+		let addressType = "bech32";  // TODO: Hardcoded wallet config should not exist.
 		try {addressType = this.props.wallet.wallets[selectedWallet].addressType[selectedCrypto];} catch (e) {}
 
 		let backgroundColor = this.isDarkMode() ? "black" : "white";
@@ -899,7 +907,7 @@ class Settings extends PureComponent {
 						<TouchableOpacity activeOpacity={1} onPress={Keyboard.dismiss} style={styles.container}>
 
 
-							<Text style={[styles.version]}>{`eCoinCore Mobile Version: ${version}\nby the Canada eCoin developers\nfind us on keybase.io/team/CanadaeCoin`}</Text>
+							<Text style={[styles.version]}>{`CDN Moonshine Version: ${version}\nby the Canada eCoin developers\nfind us on keybase.io/team/CanadaeCoin`}</Text>
 
 							<View style={{ alignItems: "center", justifyContent: "center" }}>
 								<View style={[styles.header]}>
@@ -1092,7 +1100,7 @@ class Settings extends PureComponent {
 							</View>
 
 							<SettingGeneral
-								value={`Need Some Help?\nsupport@canadaecoin.foundation`}
+								value={`Need Some Help?\nsupport@canadaecoin.ca`}
 								col1Image={<FontAwesome name="support" size={32} />}
 								onPress={this.requestHelp}
 								valueStyle={{ fontSize: 14, textAlign: "center", fontWeight: "bold" }}
@@ -1100,7 +1108,7 @@ class Settings extends PureComponent {
 							/>
 
 							<SettingGeneral
-								value={'The Canada eCoin Project\ncanadaecoin.site'}
+								value={'The Canada eCoin Project\ncanadaecoin.ca'}
 								col1Image={<MaterialCommunityIcons name="web" size={32} />}
 								onPress={this.visitWebsite}
 								valueStyle={{ fontSize: 14, textAlign: "center", fontWeight: "bold" }}
@@ -1111,7 +1119,7 @@ class Settings extends PureComponent {
 							<SettingGeneral
 								value={'This wallet is a fork of the Moonshine Wallet, \nmoonshinewallet.com'}
 								col1Image={<MaterialCommunityIcons name="web" size={32} />}
-								onPress={this.visitWebsite}
+								onPress={this.visitMoonshineDotcom}
 								valueStyle={{ fontSize: 14, textAlign: "center", fontWeight: "bold" }}
 								col2Style={{ flex: 2, alignItems: "center", justifyContent: "center", textAlign: "center" }}
 							/>
