@@ -37,5 +37,5 @@ eCoinCore.on('added', function(data){
 });
 
 eCoinCore.on('changed', function(data){
-	if (data.collection == "ExchangeRates") store.dispatch({type: actions.EXCHANGE_RATES_UPDATED, payload: { call: documentKeys[data.id], ...data.fields}})
+	if (data.collection == "ExchangeRates" && documentKeys[data.id]) store.dispatch({type: actions.EXCHANGE_RATES_UPDATED, payload: { call: documentKeys[data.id], ...data.fields}})
 });
