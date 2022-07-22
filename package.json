@@ -1,7 +1,7 @@
 {
   "name": "cdn-moonshine",
-  "version": "0.6.1",
-  "description": "An open-source, non-custodial, Bitcoin/Litecoin Electrum wallet for iOS & Android.",
+  "version": "0.6.3",
+  "description": "An open-source, non-custodial, Canada eCoin electrum wallet for iOS & Android.",
   "author": "The Canada eCoin Developers",
   "license": "MIT",
   "homepage": "https://github.com/Canada-eCoin/cdn-moonshine",
