@@ -1,0 +1,10 @@
+{
+	"ecoincore":{
+		"debug": false, // Set this to true if you want the ddp traffic messages barfed into the console log
+		"autoConnect": true,
+		"autoReconnect": true,
+		"reconnectInterval": 10000,
+		"appId": "cdn-moonshine-beta-1",
+		"endpoint": "wss://explorer.canadaecoin.ca/websocket",
+	} 
+}
