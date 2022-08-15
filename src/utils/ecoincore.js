@@ -9,8 +9,8 @@ import DDP from "react-ddp";
 
 import * as actions from "../actions"
 import { store } from "../../Root.js";
+import settings from '../config/settings';
 
-const ECC_HOST = 'explorer.canadaecoin.ca'
 const DEBUG = false;
 
 process.nextTick = setImmediate; //react-native polyfill
@@ -18,13 +18,7 @@ process.nextTick = setImmediate; //react-native polyfill
 // let ECC_HOST = 'ecoincore.com'
 let eCoinCore = new DDP({
 	SocketConstructor: WebSocket,
-	endpoint:`wss://${ECC_HOST}/websocket`,
-	debug:false,
-	// debug:true, // Uncomment this if you want the ddp traffic messages barfed into the console log
-	autoConnect: true,
-	autoReconnect: true,
-	reconnectInterval: 10000,
-	appId: "cdn-moonshine-beta-1",
+	...settings.ecoincore
 });
 
 let documentKeys = [];
@@ -32,7 +26,7 @@ let documentKeys = [];
 eCoinCore.on('added', function(data){
 	if (data.collection == "ExchangeRates") {
 		documentKeys[data.id] = data.fields.call;
-		store.dispatch({type: actions.EXCHANGE_RATES_UPDATED, payload: {... data.fields}})
+		store.dispatch({type: actions.EXCHANGE_RATES_UPDATED, payload: {...data.fields}});
 	}
 });
 

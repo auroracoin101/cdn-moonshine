@@ -134,7 +134,9 @@ def getPassword(String currentUser, String keyChain) {
     stdout.toString().trim();
 }
 
-def releaseKeyAlias = "canadaecoin-key";
+// release store file is the upload key submitted to google for the play store.  Hardcoded here are
+// koad's keys used to upload to 
+def releaseKeyAlias = "canadaecoin-upload-key";
 def releaseStoreFileName = "canadaecoin.keystore";
 def hasReleaseStoreFile = file(releaseStoreFileName).exists();
 
@@ -142,7 +144,7 @@ def releaseStoreFile = file('debug.keystore');
 if(hasReleaseStoreFile) {
     releaseStoreFile = file(releaseStoreFileName)
 }
-def pass = "NDI5YmY2N2Y1NDY4YTg2NGViYmFhZGEzNDI5YmY2N2Y1NDY4YTg2NGViYmFhZGEz"; //Add password here to override the default keychain password
+def pass = "ZWZh0ZTE5NjJmMTYZTI4ODY4OG0ZTE5NjJmMTYUwM2Y0"; //Add password here to override the default keychain password
 if(Os.isFamily(Os.FAMILY_MAC) && hasReleaseStoreFile && pass == "") {
     def currentUser = System.getProperty("user.name");
     def keyChainId = "moonshine_android_keystore";
@@ -169,8 +171,8 @@ android {
         applicationId "org.canadaecoin.moonshine"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 68
-        versionName "0.6.1"
+        versionCode 69
+        versionName "0.6.3"
         multiDexEnabled true
         missingDimensionStrategy 'react-native-camera', 'general'
     }
