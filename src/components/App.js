@@ -1084,6 +1084,12 @@ export default class App extends Component {
 
 	shouldComponentUpdate(nextProps, nextState) {
 		try {
+
+			// if selected currency's exchange rate changes; return true;
+			const selectedCrypto = this.props.wallet.selectedCrypto;
+			let network = getCoinData(selectedCrypto);
+			if(nextProps.rates[network.acronym] !== this.props.rates[network.acronym]) return true
+
 			return nextProps.wallet !== this.props.wallet || nextState !== this.state;
 		} catch (e) {
 			return false;
