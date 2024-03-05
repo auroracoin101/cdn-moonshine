@@ -28,5 +28,10 @@
     {"host": "holland.ecoincore.com", "ssl": 11017, "tcp": 11016 },
     {"host": "lenoir.ecoincore.com", "ssl": 11017, "tcp": 11016 },
     {"host": "electrum2.egulden.org", "ssl": 50002, "tcp": 50001 }
+  ],
+  "emark": [
+    {"host": "electrum1.deutsche-emark.com", "ssl": 50002, "tcp": 50001 },
+    {"host": "electrum2.deutsche-emark.com", "ssl": 50002, "tcp": 50001 },
+    {"host": "electrum3.deutsche-emark.com", "ssl": 50002, "tcp": 50001 }
   ]
 }
