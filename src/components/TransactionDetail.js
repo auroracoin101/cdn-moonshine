@@ -159,8 +159,11 @@ class TransactionDetail extends PureComponent {
 		if (selectedCrypto === "bitcoinTestnet") url = `https://blockstream.info/testnet/block-height/${block}`;
 		if (selectedCrypto === "litecoin") url = `https://chain.so/block/LTC/${block}`;
 		if (selectedCrypto === "litecoinTestnet") url = `https://chain.so/block/LTC/${block}`;
-		if (selectedCrypto === "canadaecoin") url = `https://explorer.canadaecoin.ca/block/${block}`;
-		openUrl(url);
+        if (selectedCrypto === "canadaecoin") url = `https://chainz.cryptoid.info/cdn/block.dws?${block}`;
+        if (selectedCrypto === "auroracoin") url = `https://chainz.cryptoid.info/aur/block.dws?${block}`;
+        if (selectedCrypto === "egulden") url = `https://chainz.cryptoid.info/efl/block.dws?${block}`;
+        if (selectedCrypto === "emark") url = `https://chainz.cryptoid.info/dem/block.dws?${block}`;
+        openUrl(url);
 	};
 	
 	openAddress = (address = ""): void => {
@@ -170,7 +173,10 @@ class TransactionDetail extends PureComponent {
 		if (selectedCrypto === "bitcoinTestnet") url = `https://blockstream.info/testnet/address/${address}`;
 		if (selectedCrypto === "litecoin") url = `https://chain.so/address/LTC/${address}`;
 		if (selectedCrypto === "litecoinTestnet") url = `https://chain.so/address/LTCTEST/${address}`;
-		if (selectedCrypto === "canadaecoin") url = `https://explorer.canadaecoin.ca/address/${address}`;
+        if (selectedCrypto === "canadaecoin") url = `https://chainz.cryptoid.info/cdn/address.dws?${address}`;
+        if (selectedCrypto === "auroracoin") url = `https://chainz.cryptoid.info/aur/address.dws?${address}`;
+        if (selectedCrypto === "egulden") url = `https://chainz.cryptoid.info/efl/address.dws?${address}`;
+        if (selectedCrypto === "emark") url = `https://chainz.cryptoid.info/dem/address.dws?${address}`;
 		openUrl(url);
 	};
 	
