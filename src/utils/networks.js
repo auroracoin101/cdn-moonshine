@@ -54,6 +54,17 @@ const networks = {
 		pubKeyHash: 0x30,
 		scriptHash: 0x05,
 		wif: 0xb0
+	},
+	emark: {
+		messagePrefix: '\x19Deutsche eMark Signed Message:\n',
+		bech32: 'dem',
+		bip32: {
+			public: 0x0488b21e,
+			private: 0x0488ade4
+		},
+		pubKeyHash: 0x35,
+		scriptHash: 0x1e,
+		wif: 0xb5
 	}
 };
 
@@ -64,6 +75,7 @@ const maxCoins = {
 	litecoin: 8400000000000000,
 	auroracoin: 2331805500000000,
 	egulden: 2100000000000000,
+	emark: 2100000000000000
 };
 
 //Returns an array of all available coins from the networks object.
@@ -75,6 +87,7 @@ const supportsRbf = {
 	canadaecoin: false,
 	auroracoin: true,
 	egulden: false,
+	emark: false,
 };
 
 const zeroValueItems = {
@@ -83,6 +96,7 @@ const zeroValueItems = {
 	canadaecoin: 0,
 	auroracoin: 0,
 	egulden: 0,
+	emark: 0,
 	timestamp: null
 };
 
@@ -92,6 +106,7 @@ const arrayTypeItems = {
 	canadaecoin: [],
 	auroracoin: [],
 	egulden: [],
+	emark: [],
 	timestamp: null
 };
 
@@ -101,6 +116,7 @@ const objectTypeItems = {
 	canadaecoin: {},
 	auroracoin: {},
 	egulden: {},
+	emark: {},
 	timestamp: null
 };
 
@@ -128,6 +144,7 @@ const defaultWalletShape = {
 		canadaecoin: "44",
 		auroracoin: "44",
 		egulden: "44",
+		emark: "44",
 	},
 	coinTypePath: {
 		bitcoin: "0",
@@ -137,6 +154,7 @@ const defaultWalletShape = {
 		canadaecoin: "34",
 		auroracoin: "85",
 		egulden: "78",
+		emark: "1948",
 	},
 	addressType: { //Accepts bech32, segwit, legacy
 		bitcoin: "bech32",
@@ -146,6 +164,7 @@ const defaultWalletShape = {
 		canadaecoin: "legacy",
 		auroracoin: "legacy",
 		egulden: "legacy",
+		emark: "legacy",
 	},
 	rbfData: objectTypeItems
 };
@@ -166,6 +185,8 @@ const getCoinImage = (coin = "bitcoin") => {
 				return require(`../assets/ecoins/auroracoin.png`);
 			case "egulden":
 				return require(`../assets/ecoins/egulden.png`);
+			case "emark":
+				return require(`../assets/ecoins/emark.png`);
 			default:
 				return require(`../assets/ecoins/canadaecoin.png`);
 		}
@@ -219,6 +240,13 @@ const getCoinData = ({ selectedCrypto = "canadaecoin", cryptoUnit = "CDN" }) => 
 				blockTime = 120;
 				color = "#FF940B";
 				return { acronym, label: "eGulden", crypto: "EFL", satoshi, oshi, blockTime, color };
+			case "emark":
+				satoshi = "satoshi";
+				oshi = "sats";
+				acronym = cryptoUnit === "satoshi" ? "sats" : "DEM";
+				blockTime = 120;
+				color = "#e8be74";
+				return { acronym, label: "Deutsche eMark", crypto: "DEM", satoshi, oshi, blockTime, color };
 			default:
 				return {
 					acronym: cryptoUnit === "satoshi" ? "bits" : "CDN",
